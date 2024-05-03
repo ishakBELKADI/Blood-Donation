@@ -3,14 +3,24 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:pfe/Views/authentification/dialogueGroupeSanguin.dart';
 import 'package:pfe/compenments/textformfieldA.dart';
+import 'package:pfe/djangoTest.dart';
+import 'package:pfe/models/annonce.dart';
+import 'package:pfe/models/utilisateur.dart';
 
 class PublierAnnonce extends StatefulWidget {
+  final Utilisateur utilisateur;
+  const PublierAnnonce({super.key, required this.utilisateur});
+
   @override
   State<PublierAnnonce> createState() => PublierAnnoncePage();
 }
 
 class PublierAnnoncePage extends State<PublierAnnonce> {
   DateTime? selectedDate;
+  TextEditingController placeController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
+  TextEditingController numtelController = TextEditingController();
+  TextEditingController groupsanguinController = TextEditingController();
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -31,6 +41,15 @@ class PublierAnnoncePage extends State<PublierAnnonce> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        onPressed: () async {
+          var list = await getDataDjango(urlSite, 'getAllAnnounces/');
+          List<Annonce> listAnnonce = convertirListeAnnonces(list);
+          print("==========List returned=======");
+          print(listAnnonce[0].description);
+        },
+      ),
       appBar: AppBar(
         title: Text("Publier Annonce"),
         backgroundColor: Colors.red,
@@ -155,6 +174,7 @@ class PublierAnnoncePage extends State<PublierAnnonce> {
                               onPressed: () {
                                 setState(() {});
                                 print(v);
+                                groupsanguinController.text = v!;
 
                                 Navigator.of(context).pop();
                               },
@@ -178,7 +198,10 @@ class PublierAnnoncePage extends State<PublierAnnonce> {
                     absorbing:
                         true, // Désactiver l'interaction avec le TextFormField
                     child: TextForm(
-                        label: v == null ? "Groupe sanguin" : v!,
+                        textEditingController: groupsanguinController,
+                        label: v == null
+                            ? "Groupe sanguin"
+                            : groupsanguinController.text,
                         i: Icon(
                           Icons.bloodtype,
                         )),
@@ -237,7 +260,10 @@ class PublierAnnoncePage extends State<PublierAnnonce> {
                   Container(
                     height: 8,
                   ),
-                  TextForm(label: "numero tel", i: Icon(Icons.phone)),
+                  TextForm(
+                      textEditingController: numtelController,
+                      label: "numero tel",
+                      i: Icon(Icons.phone)),
                   Container(
                     height: 20,
                   ),
@@ -251,7 +277,9 @@ class PublierAnnoncePage extends State<PublierAnnonce> {
               height: 8,
             ),
             TextForm(
-                label: "descreption(facultatif)", i: Icon(Icons.description)),
+                textEditingController: descriptionController,
+                label: "descreption(facultatif)",
+                i: Icon(Icons.description)),
             Container(
               height: 20,
             ),
@@ -262,7 +290,10 @@ class PublierAnnoncePage extends State<PublierAnnonce> {
             Container(
               height: 8,
             ),
-            TextForm(label: "Hopitale", i: Icon(Icons.local_hospital_sharp)),
+            TextForm(
+                textEditingController: placeController,
+                label: "Hopitale",
+                i: Icon(Icons.local_hospital_sharp)),
             Container(
               height: 20,
             ),
@@ -295,7 +326,30 @@ class PublierAnnoncePage extends State<PublierAnnonce> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 60),
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  print(selectedDate);
+                  Annonce annonce;
+                  if (numtelController.text != '') {
+                    annonce = Annonce(
+                        utilisateur: widget.utilisateur,
+                        description: descriptionController.text,
+                        groupSanguin: groupsanguinController.text,
+                        dateDeDonMax: selectedDate,
+                        numeroTelephone: int.parse(numtelController.text),
+                        place: placeController.text);
+                  } else {
+                    annonce = Annonce(
+                        utilisateur: widget.utilisateur,
+                        description: descriptionController.text,
+                        groupSanguin: groupsanguinController.text,
+                        dateDeDonMax: selectedDate,
+                        place: placeController.text);
+                  }
+
+                  print(annonce.toJson());
+                  addDataDjango(annonce.toJson(), urlSite,
+                      'createAnounce/${widget.utilisateur.id}');
+                },
                 child: Text(
                   "Publier",
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),

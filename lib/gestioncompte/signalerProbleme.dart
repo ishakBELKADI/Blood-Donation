@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pfe/djangoTest.dart';
+import 'package:pfe/models/utilisateur.dart';
 
 class Signalerprbl extends StatefulWidget {
+  final Utilisateur utilisateur;
+
+  Signalerprbl({super.key, required this.utilisateur});
   @override
   State<Signalerprbl> createState() => SignalerprblPage();
 }
@@ -78,6 +83,11 @@ class SignalerprblPage extends State<Signalerprbl> {
               ),
               MaterialButton(
                 onPressed: () {
+                  var data = {
+                    "problem": textEditingController.text,
+                    "id": widget.utilisateur.id
+                  };
+                  addDataDjango(data, urlSite, 'SignalerProbleme/');
                   Navigator.of(context).pop();
                 },
                 child: Text(

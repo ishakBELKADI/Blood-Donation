@@ -2,9 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
 var urlSite = "http://10.0.2.2:8000/";
-addDataDjango(dataAdd, url, suffix) async {
+Future<dynamic> addDataDjango(dataAdd, url, suffix) async {
   var data = dataAdd;
 
   var jsonData = jsonEncode(data);
@@ -20,9 +21,9 @@ addDataDjango(dataAdd, url, suffix) async {
   print("===========l'URL de l'envoi =======");
   print(Uri.parse(url + suffix));
   var jsonresponse = json.decode(response.body);
+  print(jsonresponse);
 
   if (response.statusCode == 200) {
-    print('Données postées avec succès');
     print("===========message from backend=========");
     print(jsonresponse["message"]);
   } else {
@@ -30,6 +31,7 @@ addDataDjango(dataAdd, url, suffix) async {
     print("===========message from backend=========");
     print(jsonresponse["message"]);
   }
+  return jsonresponse;
 }
 
 Future<Map<String, dynamic>> getOneDataDjango(url, attribut, suffix) async {
@@ -58,6 +60,24 @@ updateDataDjango(dataAdd, url, suffix, id) async {
     print("tuple updated");
   } else {
     print('Erreur lors de la publication des données: ${response.statusCode}');
+  }
+}
+
+getDataDjango(url, suffix) async {
+  try {
+    var response = await http.get(Uri.parse(url + suffix));
+
+    if (response.statusCode == 200) {
+      print("data ramenéé");
+      var jsonresponse = response.body;
+      var data = jsonDecode(jsonresponse);
+      return data;
+    } else {
+      throw Exception('Failed to load data');
+    }
+  } catch (e) {
+    print("==========error============");
+    print(e);
   }
 }
 

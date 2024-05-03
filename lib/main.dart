@@ -154,7 +154,7 @@ class MyAppState extends State<MyApp> {
         fontFamily: "AcherusFeral",
       ),
       // home: FirebaseAuth.instance.currentUser != null ? Profil() : Open(),
-      home: SignUp(),
+      home: Profil(),
     );
   }
 }

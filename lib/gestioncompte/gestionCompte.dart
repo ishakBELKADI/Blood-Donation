@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:pfe/Views/Trouver_donneur/publierAnnonce.dart';
 import 'package:pfe/djangoTest.dart';
 import 'package:pfe/gestioncompte/infopersonnels.dart';
 import 'package:pfe/gestioncompte/signalerProbleme.dart';
@@ -39,7 +40,13 @@ class ProfilPage extends State<Profil> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {},
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => PublierAnnonce(
+              utilisateur: utilisateur!,
+            ),
+          ));
+        },
       ),
       key: globalKey,
       appBar: AppBar(
@@ -186,8 +193,8 @@ class ProfilPage extends State<Profil> {
                     ),
                     ListTile(
                       onTap: () {
-                        globalKey.currentState!
-                            .showBottomSheet((context) => Signalerprbl());
+                        globalKey.currentState!.showBottomSheet((context) =>
+                            Signalerprbl(utilisateur: utilisateur!));
                       },
                       title: Text(
                         "Signaler un probleme",
