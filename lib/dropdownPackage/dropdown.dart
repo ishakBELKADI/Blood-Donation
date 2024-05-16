@@ -115,6 +115,7 @@ class _AppTextFieldState extends State<AppTextField> {
           decoration: InputDecoration(
             errorStyle:
                 TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+<<<<<<< HEAD
             prefixIcon: Icon(
               widget.icon,
               color: Color.fromARGB(255, 220, 0, 59),
@@ -146,6 +147,33 @@ class _AppTextFieldState extends State<AppTextField> {
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(width: 2.0, color: Colors.grey),
+=======
+
+            prefixIcon: Icon(
+              widget.icon,
+              // color: Colors.white,
+            ),
+
+            hintText: widget.textEditingController.text == ""
+                ? widget.hint
+                : widget.textEditingController.text,
+            labelStyle: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              // color: Colors.white,
+            ),
+            contentPadding: EdgeInsets.only(left: 30, top: 20, bottom: 20),
+            filled: true,
+            // fillColor: Color(0xFFDC003C),
+            enabledBorder: OutlineInputBorder(
+                // borderSide: BorderSide(
+                //   width: 2.0,
+                // ),
+                // borderRadius: BorderRadius.circular(16),
+                ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(width: 2.0, color: Colors.white),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
             ),
           ),
         ),

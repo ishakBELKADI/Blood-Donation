@@ -22,7 +22,10 @@ import 'package:pfe/notificationsTest.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:pfe/statistiques/questionnaireDon.dart';
 import 'package:pfe/testApimaps.dart';
+<<<<<<< HEAD
 import 'package:pfe/tools/bottom_navigation_bar.dart';
+=======
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   if (message.notification != null) {
@@ -149,14 +152,22 @@ class MyAppState extends State<MyApp> {
         "annonces perso": (context) => GestionAnnonce(),
         "profil": (context) => Profil(),
         "questionnaire": (context) => QuestionnaireDon(),
+<<<<<<< HEAD
         "main": (context) => const MyApp(),
         "homepage": (context) => Bottom_navigation_bar(),
+=======
+        "main": (context) => const MyApp()
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
       },
       theme: ThemeData(
         fontFamily: "AcherusFeral",
       ),
       // home: FirebaseAuth.instance.currentUser != null ? Profil() : Open(),
+<<<<<<< HEAD
       home: Open(),
+=======
+      home: Profil(),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
     );
   }
 }

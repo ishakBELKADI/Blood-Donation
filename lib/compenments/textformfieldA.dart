@@ -50,16 +50,21 @@ class TextForm extends StatelessWidget {
       // ),
       onTap: function,
       decoration: InputDecoration(
+<<<<<<< HEAD
         errorStyle: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.red,
         ),
+=======
+        errorStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
         suffix: suffix,
         prefixIcon: i,
         hintText: label,
         hintStyle: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
+<<<<<<< HEAD
           color: Colors.black,
         ),
         contentPadding: EdgeInsets.only(left: 30, top: 20, bottom: 20),
@@ -71,6 +76,19 @@ class TextForm extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 2.0, color: Colors.grey),
+=======
+          // color: Colors.white,
+        ),
+        contentPadding: EdgeInsets.only(left: 30, top: 20, bottom: 20),
+        filled: true,
+        // fillColor: Color(0xFFd20000),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(width: 2.0, color: Colors.white),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(width: 2.0, color: Colors.white),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
         ),
       ),
     );

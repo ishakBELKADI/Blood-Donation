@@ -41,6 +41,7 @@ class InfopersoPage extends State<Infoperso> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -54,10 +55,16 @@ class InfopersoPage extends State<Infoperso> {
         title: Text(
           "informations personnelles",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+=======
+        title: Text(
+          "informations personnels",
+          style: TextStyle(fontWeight: FontWeight.bold),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
         ),
         backgroundColor: Color(0xFFDC003C),
       ),
       body: Container(
+<<<<<<< HEAD
         padding: EdgeInsets.only(right: 10, left: 10, bottom: 10),
         child: ListView(
           children: [
@@ -65,13 +72,26 @@ class InfopersoPage extends State<Infoperso> {
               height: 30,
             ), */
             /*  Text(
+=======
+        padding: EdgeInsets.all(10),
+        child: ListView(
+          children: [
+            Container(
+              height: 30,
+            ),
+            Text(
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
               "Consuler ou modifier vos informations ",
               textAlign: TextAlign.start,
               style: TextStyle(
                   // color: const Color.fromARGB(255, 224, 215, 215),
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
+<<<<<<< HEAD
             ), */
+=======
+            ),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
             Container(
               height: 40,
             ),
@@ -83,7 +103,11 @@ class InfopersoPage extends State<Infoperso> {
                     label: "Nom",
                     i: Icon(
                       Icons.person,
+<<<<<<< HEAD
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     )),
                 Container(
                   height: 30,
@@ -93,7 +117,11 @@ class InfopersoPage extends State<Infoperso> {
                     label: "Prenom",
                     i: Icon(
                       Icons.person,
+<<<<<<< HEAD
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     )),
                 Container(
                   height: 30,
@@ -103,7 +131,11 @@ class InfopersoPage extends State<Infoperso> {
                     label: "numero telephone",
                     i: Icon(
                       Icons.phone,
+<<<<<<< HEAD
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     )),
                 Container(
                   height: 30,
@@ -112,8 +144,13 @@ class InfopersoPage extends State<Infoperso> {
                     textEditingController: groupesnguincontroller,
                     label: "groupe sanguin",
                     i: Icon(
+<<<<<<< HEAD
                       Icons.bloodtype_outlined,
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                      Icons.bloodtype,
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     )),
                 Container(
                   height: 30,
@@ -123,7 +160,11 @@ class InfopersoPage extends State<Infoperso> {
                     textEditingController: wilaya,
                     i: Icon(
                       Icons.location_on,
+<<<<<<< HEAD
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     )),
                 Container(
                   height: 30,
@@ -133,7 +174,11 @@ class InfopersoPage extends State<Infoperso> {
                     textEditingController: dairatext,
                     i: Icon(
                       Icons.location_on,
+<<<<<<< HEAD
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     )),
                 Container(
                   height: 30,
@@ -143,17 +188,26 @@ class InfopersoPage extends State<Infoperso> {
                   decoration: InputDecoration(
                     prefixIcon: Icon(
                       Icons.mail,
+<<<<<<< HEAD
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     ),
                     labelText: "Email",
                     labelStyle: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
+<<<<<<< HEAD
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     ),
                     contentPadding:
                         EdgeInsets.only(left: 30, top: 20, bottom: 20),
                     filled: true,
+<<<<<<< HEAD
                     fillColor: Colors.grey[200],
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 2.0, color: Colors.grey),
@@ -161,6 +215,15 @@ class InfopersoPage extends State<Infoperso> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 2.0, color: Colors.grey),
+=======
+                    fillColor: Colors.red,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 2.0, color: Colors.white),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 2.0, color: Colors.white),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     ),
                   ),
                 ),
@@ -174,21 +237,35 @@ class InfopersoPage extends State<Infoperso> {
                         onPressed: () {},
                         icon: Icon(
                           Icons.remove_red_eye,
+<<<<<<< HEAD
                           color: Colors.grey,
                         )),
                     prefixIcon: Icon(
                       Icons.key,
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                          color: Colors.white,
+                        )),
+                    prefixIcon: Icon(
+                      Icons.key,
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     ),
                     labelText: "Nouveau Mot de passe",
                     labelStyle: TextStyle(
                       fontSize: 16,
+<<<<<<< HEAD
                       //fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 220, 0, 59),
+=======
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     ),
                     contentPadding:
                         EdgeInsets.only(left: 30, top: 20, bottom: 20),
                     filled: true,
+<<<<<<< HEAD
                     fillColor: Colors.grey[200],
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 2.0, color: Colors.grey),
@@ -196,6 +273,15 @@ class InfopersoPage extends State<Infoperso> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(width: 2.0, color: Colors.grey),
+=======
+                    fillColor: Colors.red,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 2.0, color: Colors.white),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(width: 2.0, color: Colors.white),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                     ),
                   ),
                 ),
@@ -258,10 +344,17 @@ class InfopersoPage extends State<Infoperso> {
                 Navigator.of(context).pushReplacementNamed("profil");
               },
               child: Text(
+<<<<<<< HEAD
                 "Enregister",
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
               color: Color.fromARGB(255, 220, 0, 59),
+=======
+                "Appliquer changement",
+                style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+              ),
+              color: Color(0xFFd20000),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
               textColor: Colors.white,
               height: 50,
               shape: RoundedRectangleBorder(

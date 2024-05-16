@@ -39,8 +39,12 @@ class ProfilPage extends State<Profil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: Color.fromARGB(255, 255, 234, 239),
       /* floatingActionButton: FloatingActionButton(
+=======
+      floatingActionButton: FloatingActionButton(
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => PublierAnnonce(
@@ -48,12 +52,18 @@ class ProfilPage extends State<Profil> {
             ),
           ));
         },
+<<<<<<< HEAD
       ), */
       key: globalKey,
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Colors.white, // Changez cette couleur selon vos besoins
         ),
+=======
+      ),
+      key: globalKey,
+      appBar: AppBar(
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
         backgroundColor: Color(0xFFDC003C),
         titleTextStyle: TextStyle(
             fontSize: 30,
@@ -66,7 +76,11 @@ class ProfilPage extends State<Profil> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+<<<<<<< HEAD
         child: ListView(
+=======
+        child: Column(
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
           children: [
             Card(
               child: Row(
@@ -104,22 +118,38 @@ class ProfilPage extends State<Profil> {
                                   child: switchvalue
                                       ? Row(
                                           children: [
+<<<<<<< HEAD
+=======
+                                            Text("Apte "),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                                             Icon(
                                               Icons.circle,
                                               color: Colors.green,
                                               size: 16,
+<<<<<<< HEAD
                                             ),
                                             Text(" Apte"),
+=======
+                                            )
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                                           ],
                                         )
                                       : Row(
                                           children: [
+<<<<<<< HEAD
+=======
+                                            Text("InApte "),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                                             Icon(
                                               Icons.circle,
                                               color: Colors.red,
                                               size: 16,
+<<<<<<< HEAD
                                             ),
                                             Text(" Inapte"),
+=======
+                                            )
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                                           ],
                                         )),
                             ],
@@ -187,7 +217,11 @@ class ProfilPage extends State<Profil> {
                         },
                       ),
                       title: Text(
+<<<<<<< HEAD
                         "statut de don ",
+=======
+                        "votre statu de don ",
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       leading: Icon(
@@ -213,6 +247,7 @@ class ProfilPage extends State<Profil> {
                 ),
               ),
             ),
+<<<<<<< HEAD
             // Expanded(
             // child:
             Container(
@@ -233,6 +268,30 @@ class ProfilPage extends State<Profil> {
               ),
             ),
             // ),
+=======
+            SizedBox(
+              height: 27,
+            ),
+            Expanded(
+              child: Container(
+                child: MaterialButton(
+                  onPressed: () async {
+                    await FirebaseAuth.instance.signOut();
+                    Navigator.of(context).pushNamed("main");
+                  },
+                  child: Text(
+                    "Se Deconnecter",
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                  ),
+                  color: Color(0xFFDC003C),
+                  textColor: Colors.white,
+                  height: 50,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                ),
+              ),
+            ),
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
           ],
         ),
       ),

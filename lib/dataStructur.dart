@@ -77,8 +77,13 @@ List<SelectedListItem> willaya = [
     isSelected: false,
   ),
   SelectedListItem(
+<<<<<<< HEAD
     name: "Alger",
     value: "Alger",
+=======
+    name: "Algiers",
+    value: "Algiers",
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
     isSelected: false,
   ),
   SelectedListItem(

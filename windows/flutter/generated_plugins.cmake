@@ -7,9 +7,13 @@ list(APPEND FLUTTER_PLUGIN_LIST
   firebase_auth
   firebase_core
   firebase_storage
+<<<<<<< HEAD
   geolocator_windows
   rive_common
   url_launcher_windows
+=======
+  rive_common
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

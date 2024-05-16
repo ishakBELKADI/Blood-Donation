@@ -47,9 +47,12 @@ dependencies:
   http: ^1.2.0
   another_flushbar: ^1.12.30
   google_maps_flutter: ^2.5.3
+<<<<<<< HEAD
   geolocator: ^11.0.0
   url_launcher: ^6.2.6
   csv: ^6.0.0
+=======
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +79,7 @@ flutter:
   assets:
     - images/google.png
     - images/moi.jpg
+<<<<<<< HEAD
     - images/ill_1.png
     - images/ill_2.png
     - images/ill_3.png
@@ -85,6 +89,8 @@ flutter:
     - images/ill_blood-min.png
     - assets/google_maps_data.csv
     - assets/hospitals.geojson
+=======
+>>>>>>> cffc500e1df11e7d4740da311fc074fd1deabf10
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
